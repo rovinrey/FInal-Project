@@ -1,0 +1,35 @@
+.hero {
+    height: 70vh;
+    display: flex;
+    margin-left: 20px;
+    margin-top: 50px;
+
+}
+.left button {
+    width: 120px;
+    height: 50px;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    font-weight: bold;
+    background-color:#3e87bb;
+    border: none;
+}
+h2 {
+    font-size: 70px;
+    justify-content: center;
+}
+h3 {
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-products{
+    margin-top: 0%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}

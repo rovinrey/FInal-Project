@@ -1,0 +1,124 @@
+/* Components/Cart/Cart.css */
+
+.cart-container {
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    margin: 0 0 0.5rem;
+    color: #007bff;
+}
+
+.item-price {
+    margin: 0;
+    color: #555;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-button:disabled {
+    background-color: #f4f4f4;
+    cursor: not-allowed;
+}
+
+.item-quantity {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.item-subtotal {
+    font-weight: 500;
+    color: #333;
+    min-width: 100px;
+    text-align: right;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-summary {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #007bff;
+    text-align: right;
+}
+
+.cart-summary h3 {
+    margin: 0 0 1rem;
+    color: #333;
+}
+
+.checkout-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -5,8 +5,7 @@ import AsusROG from '../../assets/asusROG.jpg'
 
 function LandingPage() {
     return(
-       <>
-            
+       <>       
         <div className="hero">
             <div className="left">
                 <h2>Upgrade Your Tech,<br /> Upgrade Your Life</h2>

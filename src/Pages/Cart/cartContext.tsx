@@ -1,8 +1,8 @@
 // src/Pages/Cart/cartContext.tsx
 
-import { createContext, useContext, useState, type ReactNode} from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 
-// Your cart item type
+// Product type
 type Product = {
   id: number;
   name: string;
@@ -13,15 +13,18 @@ type Product = {
   quantity: number;
 };
 
-// Cart context type
+// Context type
 type CartContextType = {
   cartItems: Product[];
   addToCart: (product: Omit<Product, 'quantity'>) => void;
+  removeFromCart: (productId: number) => void;
+  updateQuantity: (productId: number, newQuantity: number) => void;
 };
 
 // Create context
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+// Hook to use context
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
@@ -30,6 +33,7 @@ export const useCart = () => {
   return context;
 };
 
+// Provider
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
@@ -48,8 +52,22 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const removeFromCart = (productId: number) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
+  };
+
+  const updateQuantity = (productId: number, newQuantity: number) => {
+    setCartItems(prevItems =>
+      prevItems.map(item =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );

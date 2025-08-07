@@ -23,7 +23,6 @@ function TopNav() {
             </ul>
             <div className='cart-icon'>
                 <Link to='cart'><img src={cart} alt="" /></Link>
-                <div className='cart-count'>0</div>
             </div>
         </div>
     );

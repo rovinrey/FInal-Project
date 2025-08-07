@@ -1,50 +1,32 @@
-import { useState } from 'react';
+// src/Pages/Cart/CartPage.tsx
+import './cart.css';
+import { useCart } from './cartContext';
 
-// The props now include a unique 'id' and a function to call when the button is clicked.
-type ProductCardProps = {
-    name: string;
-    img: string;
-    productDesc: string;
-    price: number;
-    // New prop: a function to be called on "add to cart"
-    onAddToCart: (quantity: number) => void;
-};
+function CartPage() {
+  const { cartItems } = useCart();
 
-// Destructure the new prop in the function signature
-function ProductCardComponent({ name, img, productDesc, price, onAddToCart }: ProductCardProps) {
-    const [quantity, setQuantity] = useState(0);
-
-    const handleAdd = () => {
-        setQuantity(prevQuantity => prevQuantity + 1);
-    };
-
-    const handleMin = () => {
-        setQuantity(prevQuantity => Math.max(0, prevQuantity - 1));
-    };
-
-    return (
-        <div className='product-card'>
-            <img src={img} alt={name} className='product-image' />
-            <div className='product-content'>
-                <h3 className='product-name'>{name}</h3>
-                <p className='product-desc'>{productDesc}</p>
-                <p className='product-price'>₱{price}</p>
-                <div className='quantity-container'>
-                    <button className='min-button' onClick={handleMin}>-</button>
-                    <span className='quantity-display'>{quantity}</span>
-                    <button className='add-button' onClick={handleAdd}>+</button>
-                </div>
-                {/* Button to trigger the parent's function */}
-                <button
-                    className='add-to-cart-button'
-                    onClick={() => onAddToCart(quantity)}
-                    disabled={quantity === 0}
-                >
-                    Add to Cart
-                </button>
-            </div>
-        </div>
-    );
+  return (
+    <div className="cart-container">
+      <h1 className="cart-title">Your Cart</h1>
+      {cartItems.length === 0 ? (
+        <p className="cart-empty">Your cart is empty.</p>
+      ) : (
+        <ul className="cart-items">
+          {cartItems.map(item => (
+            <li key={item.id} className="cart-item">
+              <img src={item.img} alt={item.name} />
+              <div className="cart-item-details">
+                <div className="cart-item-name">{item.name}</div>
+                <div className="cart-item-desc">{item.productDesc}</div>
+                <div className="cart-item-price">₱{item.price}</div>
+                <div className="cart-item-qty">Quantity: {item.quantity}</div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
 
-export default ProductCardComponent;
+export default CartPage;

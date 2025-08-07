@@ -1,9 +1,9 @@
 import './App.css';
 import TopNav from './Layout/TopNav';
 import './Pages/LandingPage/LandingPage.css';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-import LandingPage from './Pages/LandingPage/LandingPAge';
+import LandingPage from './Pages/LandingPage/LandingPage';
 import Phones from './Pages/Phones/Phone';
 import Laptop from './Pages/Laptops/Laptop';
 import Homepage from './Pages/HomePage/Homepage';
@@ -38,9 +38,9 @@ function AppContent() {
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <AppContent />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

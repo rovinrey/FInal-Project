@@ -1,63 +1,66 @@
-.product-card {
-    width: 250px;
-    background: linear-gradient(135deg, #ffffff, #f9f9f9); 
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0 , 0.1);
-    overflow: hidden;
-    cursor: pointer;
-
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-bottom: 20px;
+.cart-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.product-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-.product-content {
-    padding: 16px;
-    text-align: center;
-
-}
-.product-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
-    margin: 8px 0 4px 0;
-}
-.product-name {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom:8px;
-}
-.product-desc {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 12px;
-}
-.product-rating {
-    font-size: 1.2rem;
-    color: #ffb400;
+.cart-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.add-to-cart-button {
-    font-weight: bold;
-    color: rgb(236, 236, 236);
-    background-color: #3e87bb;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10px;
-    cursor: pointer;
+.cart-empty {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 40px;
 }
-.quantity-container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-item-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+.cart-item-price {
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-item-qty {
+  font-size: 14px;
+  color: #666;
 }
